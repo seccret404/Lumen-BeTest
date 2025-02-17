@@ -1,5 +1,7 @@
 <?php
 
+use App\Http\Controllers\UserController;
+
 /** @var \Laravel\Lumen\Routing\Router $router */
 
 /*
@@ -13,6 +15,12 @@
 |
 */
 
-$router->get('/', function () use ($router) {
-    return $router->app->version();
-});
+ $router->group(['prefix' => 'users'], function () use ($router){
+
+    $router->get('/',[UserController::class,'getUserAll']);
+    $router->get('/{id}',[UserController::class,'getUserById']);
+    $router->post('/',[UserController::class, 'addUser']);
+    $router->put('/{id}',[UserController::class, 'updateById']);
+    $router->delete('/{id}',[UserController::class, 'deleteUser']);
+    
+ });
