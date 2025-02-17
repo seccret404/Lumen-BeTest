@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\User;
+use Illuminate\Http\Request;
 
 class UserController extends Controller
 {
@@ -32,7 +33,7 @@ class UserController extends Controller
             'age'   =>$request->age
         ]);
 
-        return response()->json($user, 201);
+        return response()->json($user->refresh(), 201);
     }
 
     public function updateById(Request $request, $id){
@@ -40,13 +41,13 @@ class UserController extends Controller
 
         $this->validate($request,[
             'name'  => 'required|string|max:255',
-            'email' => 'required|email|unique:users,email'. $user->id,
+            'email' => 'required|email|unique:users,email,' . $id,
             'age'   => 'required|integer|min:1',
         ]);
 
         $user->update($request->only(['name', 'email', 'age']));
 
-        return response()->json($user, 201);
+        return response()->json($user, 200);
     }
 
     public function deleteUser($id){
