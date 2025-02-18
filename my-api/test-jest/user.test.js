@@ -32,12 +32,11 @@ describe("User API Tests", () => {
     test("Create User - Duplicate Email", async () => {
         const res = await request(baseURL)
             .post("/users")
-            .send({ name: "Jane Doe", email: "edward@gmail.com", age: 22 });
+            .send({ name: "Jhon", email: "edward@gmail.com", age: 22 });
 
         expect(res.statusCode).toEqual(422);
         expect(res.body.errors).toHaveProperty("email");
     });
-
 
     //Get
     test("Get All Users", async () => {
