@@ -1,5 +1,8 @@
 # Project Lumen API
-
+## Deskripsi projek
+Projek ini dibangun menggunakan bahasa pemrograman PHP, dengan framework Laravel Lumen. Dalam proyek ini terdapat satu fitur untuk user dengan mencangkup
+fungsi CRUD (Create, Update, Read, Update, Delete). Fungsi-fungsi yang dibangun memiliki validasi terhadap data yang akan dikirimkan kedatabase berupa tipe data,
+panjang karakter, require dan unik. Untuk menjalankan proyek tersebut dapat mengikuti instalasi dibawah ini.
 ## Setup
 
 1. Clone repository ini.
