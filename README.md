@@ -22,6 +22,10 @@
     - method : PUT => http://localhost:8000/{id}
     - method : DELETE => http://localhost:8000/{id}
 
+## Dokumentasi API With Swagger
+Akses dengan enpoint 
+=> method : GET => http://localhost:8000/docs
+
 ## Testing Unit Test
 
 Untuk menjalankan unit test menggunakan Jest:
